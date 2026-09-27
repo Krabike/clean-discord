@@ -1,0 +1,177 @@
+:root[data-clean-discord-theme] {
+    /* Variables */
+    --custom-red-400: oklch(0.5959 0.1924 23.27);
+    --custom-accent-color: oklch(0.6 0.119 288.49);
+    --custom-accent-color-light: oklch(0.75 0.12 288.49);
+    --custom-accent-color-light-hsl: 249.79 100% 80.32%;
+    --custom-accent-color-ultra-light: oklch(0.86 0.07 288.49);
+    --custom-accent-color-dark: oklch(0.45 0.2 288.49);
+    --custom-accent-color-hover-dark: oklch(0.52 0.119 288.49);
+    --custom-accent-color-active-dark: oklch(0.46 0.089 288.49);
+    --custom-accent-color-translucent: color-mix(
+        in oklab,
+        var(--custom-accent-color),
+        transparent 82%
+    );
+    --custom-accent-color-translucent-light: color-mix(
+        in oklab,
+        var(--custom-accent-color),
+        transparent 62%
+    );
+    --custom-accent-color-translucent-dark: color-mix(
+        in oklab,
+        var(--custom-accent-color),
+        transparent 96%
+    );
+}
+
+:root[data-clean-discord-theme] {
+    --green-new-60: var(--custom-accent-color-hover-dark);
+    --green-new-50: var(--custom-accent-color);
+    --green-new-40: var(--custom-accent-color);
+    --green-new-31: var(--custom-accent-color-light);
+    --green-new-30: var(--custom-accent-color-light);
+    --green-new-25: var(--custom-accent-color-light);
+    --blue-new-37: var(--custom-accent-color-light);
+    --blurple-21: var(--custom-accent-color);
+    --blurple-36: var(--custom-accent-color-light);
+    --blurple-50: var(--custom-accent-color);
+    --blurple-60: var(--custom-accent-color-hover-dark);
+    --blurple-65: var(--custom-accent-color-active-dark);
+    --opacity-blurple-16-hsl: var(--custom-accent-color-light-hsl);
+    --opacity-green-8-hsl: var(--custom-accent-color-light-hsl);
+    --opacity-green-12: var(--custom-accent-color-translucent);
+    --opacity-green-24: var(--custom-accent-color-translucent-light);
+    /* idk if it brokes smth */
+    --red-400: var(--custom-accent-color);
+}
+
+:root[data-clean-discord-theme] {
+    .theme-dark {
+        /* --message-highlight-background-default: #fff; */
+        /* Notification badges */
+        --background-feedback-notification: var(--custom-accent-color);
+        --badge-notification-background: var(--custom-accent-color);
+        /* Control active btn */
+        --control-connected-background-active: var(
+            --custom-accent-color-active-dark
+        );
+        /* OP color */
+        --brand-260: var(--custom-accent-color-ultra-light);
+        --brand-560: var(--custom-accent-color-dark);
+    }
+}
+
+/* Colors */
+:root[data-clean-discord-theme] {
+    /* Guild members list icons */
+    [class*="member"] :is([class*="subText"] path, [class*="icon"]) {
+        fill: var(--custom-accent-color) !important;
+    }
+
+    /* Private messages user icons */
+    [data-list-item-id*="private-channels"] :is(svg[class*="icon"] path) {
+        fill: var(--custom-accent-color);
+    }
+
+    [data-list-item-id*="private-channels"]
+        + [class*="iconsContainer"]
+        [class*="favoriteIcon"] {
+        color: var(--custom-accent-color);
+    }
+
+    /* Voice message */
+    [class*="mosaicItem"] [class*="playButtonContainer"] {
+        background-image: linear-gradient(
+            151.11deg,
+            var(--custom-accent-color-light) 16.55%,
+            var(--custom-accent-color) 104.36%
+        ) !important;
+    }
+
+    [class*="volumeButtonSlider"] [class*="mediaBarGrabber"] {
+        background-color: var(--custom-accent-color-hover-dark) !important;
+    }
+
+    /* Invite */
+    [class*="inviteRowStatusIcon"] path {
+        fill: var(--custom-accent-color-light);
+    }
+
+    /* Game preview above voice connected */
+    [class*="gameWrapper"] [class*="icon"] {
+        background-color: var(--custom-accent-color) !important;
+    }
+
+    /* Mentioned */
+    [class*="message"][class*="mentioned"] {
+        --message-mentioned-background-default: var(
+            --custom-accent-color-translucent
+        );
+        --message-mentioned-background-hover: var(
+            --custom-accent-color-translucent-dark
+        );
+        --icon-feedback-warning: var(--custom-accent-color-light);
+    }
+
+    /* Invite bg */
+    [class*="message"] [id*="message-accessories"] {
+        & [class*="glow"] {
+            background-color: var(--custom-accent-color);
+        }
+
+        & [class*="dots"] {
+            background-image: radial-gradient(
+                circle,
+                var(--custom-accent-color-light) 0px,
+                var(--custom-accent-color-active-dark) 1.25px,
+                rgba(0, 0, 0, 0) 1.25px,
+                rgba(0, 0, 0, 0) 100%
+            );
+        }
+    }
+
+    /* Crown icon */
+    [class*="member"] svg[class*="ownerIcon"] {
+        --text-feedback-warning: var(--custom-accent-color);
+    }
+
+    /* Mute color reset */
+    [class*="attachedCaretButtonContainer"] {
+        --red-400: var(--custom-red-400);
+    }
+
+    /* Links */
+    [class*="subheading"] a {
+        color: var(--custom-accent-color);
+    }
+}
+
+/* Visual improvments */
+:root[data-clean-discord-theme] {
+    /* Guilds */
+    [class*="guilds"] [class*="listItem"] foreignObject {
+        mask: none;
+        border-radius: 100%;
+
+        &:has([class*="folderButton"]) {
+            border-radius: 25%;
+        }
+    }
+
+    [class*="upperBadge"],
+    [class*="lowerBadge"] {
+        box-shadow: 0 0 0 2px var(--background-base-lowest);
+        border-radius: 100%;
+        background-color: var(--background-base-lowest);
+    }
+
+    /* Folders */
+    [class*="folderGroup"] {
+        --custom-folder-preview-padding: 6px;
+    }
+
+    [class*="folderPreviewGuildIcon"] {
+        border-radius: 32px !important;
+    }
+}

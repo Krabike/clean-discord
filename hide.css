@@ -1,0 +1,407 @@
+/* Misc */
+/* Delete all dividers at popovers */
+[data-delete-all-dividers] #popover-portal [class*="separator"] {
+    display: none;
+}
+
+/* Header call, top bar right corner nitro icon */
+[data-call-header-nitro-icon]
+    [class*="topControls"]
+    [class*="streamQualityIndicator"]
+    [class*="premiumStreamIcon"] {
+    display: none;
+}
+
+/* Self right click popover */
+[data-user-options-self]
+    #popover-portal:not(
+        :has(
+            #user-context-message-user,
+            #user-context-block,
+            #user-context-call
+        )
+    ) {
+    [data-user-disable-self] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-user-profile-self] #user-context-user-profile,
+            [data-user-mention-self] #user-context-mention,
+            [data-user-mute-self] #user-context-mute,
+            [data-user-deafen-self] #user-context-deafen,
+            [data-user-change-nickname-self] #user-context-change-nickname,
+            [data-user-apps-self] #user-context-apps,
+            [data-user-roles-self] #user-context-roles,
+            [data-user-move] #user-context-voice-move,
+            [data-user-mod-view] #user-context-mod-view,
+            [data-user-mod-server-mute] #user-context-voice-mute,
+            [data-user-mod-server-deafen] #user-context-voice-deafen,
+            [data-user-id-self] [id*="user-context-devmode-copy-id"]
+        ) {
+        display: none;
+    }
+}
+
+/* Other users right click popover */
+[data-user-options]
+    #popover-portal:has(
+        #user-context-message-user,
+        #user-context-block,
+        #user-context-call
+    ) {
+    [data-user-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-user-profile] #user-context-user-profile,
+            [data-user-mention] #user-context-mention,
+            [data-user-message] #user-context-message-user,
+            [data-user-call] #user-context-call,
+            [data-user-note] #user-context-note,
+            [data-user-volume] #user-context-user-volume,
+            [data-user-mute] #user-context-mute,
+            [data-user-mute-soundboard] #user-context-soundboard-sound-mute,
+            [data-user-add-friend-nickname] #user-context-add-friend-nickname,
+            [data-user-apps] #user-context-apps,
+            [data-user-invite-to-server] #user-context-invite-to-server,
+            [data-user-remove-friend] #user-context-remove-friend,
+            [data-user-add-friend] #user-context-add-friend,
+            [data-user-ignore] #user-context-ignore,
+            [data-user-block] #user-context-block,
+            [data-user-roles] #user-context-roles,
+            [data-user-change-nickname] #user-context-change-nickname,
+            [data-user-disable-video] #user-context-disable-video,
+            [data-user-mod-view] #user-context-mod-view,
+            [data-user-kick] #user-context-kick,
+            [data-user-ban] #user-context-ban,
+            [data-user-verification]
+                #user-context-secure-frames-user-verification,
+            [data-user-move] #user-context-voice-move,
+            [data-user-server-mute] #user-context-voice-mute,
+            [data-user-server-deafen] #user-context-voice-deafen,
+            [data-user-disconnect] #user-context-voice-disconnect,
+            [data-user-mark-read-dm] #user-context-mark-channel-read,
+            [data-user-pin-dm] #user-context-pin-dm,
+            [data-user-close-dm] #user-context-close-dm,
+            [data-user-mute-dm] #user-context-mute-channel,
+            [data-user-call-popout] #user-context-call-tile-popout,
+            [data-user-call-no-video-hide] #user-context-no-video-hide,
+            [data-user-request-stream] #user-context-request-to-stream,
+            [data-user-id] [id*="user-context-devmode-copy-id"]
+        ) {
+        display: none;
+    }
+}
+
+/* Group right click popover */
+[data-group-options] #popover-portal:has(#gdm-context-leave-channel) {
+    [data-group-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-group-mark-read] #gdm-context-mark-channel-read,
+            [data-group-pin] #gdm-context-pin-dm,
+            [data-group-edit] #gdm-context-edit-gdm,
+            [data-group-mute] #gdm-context-mute-channel,
+            [data-group-leave] #gdm-context-leave-channel,
+            [data-group-id] [id*="gdm-context-devmode-copy-id"]
+        ) {
+        display: none;
+    }
+}
+
+/* Call self card right click popover*/
+[data-self-call-options] #popover-portal:has(#user-context-self-video-hide) {
+    [data-self-call-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-self-call-profile] #user-context-user-profile,
+            [data-self-call-change-bg] #user-context-change-video-background,
+            [data-self-call-popout] #user-context-call-tile-popout,
+            [data-self-call-no-video] #user-context-no-video-hide,
+            [data-self-call-user] #user-context-self-video-hide,
+            [data-self-call-voice-mute] #user-context-voice-mute,
+            [data-self-call-voice-deafen] #user-context-voice-deafen
+        ) {
+        display: none;
+    }
+}
+
+/* Call self demo right click popover */
+[data-self-demo-options] #popover-portal:has(#stream-context-stop-streaming) {
+    [data-self-demo-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-self-demo-stop] #stream-context-stop-streaming,
+            [data-self-demo-change-windows] #stream-context-change-windows,
+            [data-self-demo-settings] #stream-context-stream-settings,
+            [data-self-demo-audio-enable]
+                #stream-context-stream-settings-audio-enable,
+            [data-self-demo-popout] #stream-context-call-tile-popout,
+            [data-self-demo-more-options] #stream-context-more-options
+        ) {
+        display: none;
+    }
+}
+
+/* Call demo right click popover */
+[data-demo-options] #popover-portal:has(#stream-context-watch) {
+    [data-demo-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-demo-watching] #stream-context-watch,
+            [data-demo-mute] #stream-context-mute,
+            [data-demo-volume] #stream-context-user-volume,
+            [data-demo-popout] #stream-context-call-tile-popout,
+            [data-demo-attenuation] #stream-context-sidechain-compression,
+            [data-demo-more-options] #stream-context-more-options
+        ) {
+        display: none;
+    }
+}
+
+/* Text channel right click popover */
+[data-text-channel-options]
+    #popover-portal:has(#channel-context-channel-notifications) {
+    [data-text-channel-disable] & {
+        display: none;
+    }
+    &
+        :is(
+            [data-text-channel-mark-read] #channel-context-mark-channel-read,
+            [data-text-channel-invite] #channel-context-invite-people,
+            [data-text-channel-pin] #channel-context-pin-channel,
+            [data-text-channel-copy-link] #channel-context-channel-copy-link,
+            [data-text-channel-mute] #channel-context-mute-channel,
+            [data-text-channel-unmute] #channel-context-unmute-channel,
+            [data-text-channel-notifications]
+                #channel-context-channel-notifications,
+            [data-text-channel-edit] #channel-context-edit-channel,
+            [data-text-channel-clone] #channel-context-clone-channel,
+            [data-text-channel-create] #channel-context-create-text-channel,
+            [data-text-channel-delete] #channel-context-delete-channel,
+            [data-text-channel-opt-out-category]
+                #channel-context-opt-out-category,
+            [data-text-channel-clear-spoiler]
+                #channel-context-clear-spoiler-agree,
+            [data-text-channel-opt-into-channel]
+                #channel-context-opt-into-channel,
+            [data-text-channel-id] [id*="channel-context-devmode-copy-id"]
+        ) {
+        display: none;
+    }
+}
+
+/* Voice channel right click popover */
+[data-voice-channel-options]
+    #popover-portal:has(#channel-context-hide-voice-names) {
+    [data-voice-channel-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-voice-channel-mark-read] #channel-context-mark-channel-read,
+            [data-voice-channel-invite] #channel-context-invite-people,
+            [data-voice-channel-pin] #channel-context-pin-channel,
+            [data-voice-channel-copy-link] #channel-context-channel-copy-link,
+            [data-voice-channel-open-chat] #channel-context-open-chat,
+            [data-voice-channel-set-status] #channel-context-set-status,
+            [data-voice-channel-hide-voice-names]
+                #channel-context-hide-voice-names,
+            [data-voice-channel-mute] #channel-context-mute-channel,
+            [data-voice-channel-edit] #channel-context-edit-channel,
+            [data-voice-channel-clone] #channel-context-clone-channel,
+            [data-voice-channel-create] #channel-context-create-voice-channel,
+            [data-voice-channel-delete] #channel-context-delete-channel,
+            [data-text-channel-id] [id*="channel-context-devmode-copy-id"]
+        ) {
+        display: none;
+    }
+}
+
+/* Message right click popover */
+[data-message-options] #popover-portal:has(#message-report) {
+    [data-message-disable] & {
+        display: none;
+    }
+
+    &
+        :is(
+            [data-message-quick-reactions]
+                [role*="group"]:has([id*="message-quickreact"]),
+            [data-message-add-reaction] #message-add-reaction,
+            [data-message-reactions] #message-reactions,
+            [data-message-reply] #message-reply,
+            [data-message-forward] #message-forward,
+            [data-message-thread] #message-thread,
+            [data-message-pin] #message-pin,
+            [data-message-apps] #message-apps,
+            [data-message-mark-unread] #message-mark-unread,
+            [data-message-copy-link] #message-copy-link,
+            [data-message-emoji-reactions] #message-remove-emoji-reactions,
+            [data-message-remove-reactions] #message-remove-reactions,
+            [data-message-delete] #message-delete,
+            [data-message-report] #message-report,
+            [data-message-copy-text] #message-copy-text,
+            [data-message-tts] #message-tts,
+            [data-message-save-voice-audio] #message-save-voice-message-audio,
+            [data-message-id] [id*="message-devmode-copy-id"]
+        ) {
+        display: none;
+    }
+}
+
+/* Stream preview (not in voice) */
+[id*="popout"] [class*="streamPreviewWrapper"] {
+    & [class*="streamHeaderVoiceUserActivities"] {
+        display: none;
+    }
+
+    & [class*="bodyUserActivity"] {
+        display: none;
+    }
+}
+/* Text input btns */
+[data-bottom-input-btns] [class*="channelBottomBarArea"] {
+    [data-bottom-input-sticker-btn] & [class*="buttonContainer"]:has([class*="stickerButton"]),
+    [data-bottom-input-emoji-btn] & [class*="buttonContainer"]:has([class*="emojiButton"]),
+    /* apps and commands btn */
+    [data-bottom-input-app-btn] & [class*="buttonContainer"].app-launcher-entrypoint {
+        display: none;
+    }
+}
+
+/* Activities */
+[data-activities-hide] [class*="membersGroup"]:has([class*="headerContainer"]),
+div[data-list-item-id*="members"]:has([class*="infoSection"]) {
+    display: none !important;
+}
+
+/* Top bar help and inbox remove*/
+[data-top-bar-misc] [class*="bar"] [class*="trailing"] {
+    & > *:not([class*="winButtons"]) {
+        display: none;
+    }
+
+    & [class*="winButtons"]::before {
+        display: none;
+    }
+}
+
+/* Nitro icon near demo quality */
+[data-demo-nitro] [class*="perksDemoContainer"] svg {
+    display: none;
+}
+
+/* Call, more settings button on user card */
+[data-user-card-more-options]
+    [class*="tileChild"]
+    [class*="overlayButtonContainer"] {
+    display: none;
+}
+
+/* Disconnect arrow */
+[data-disconnect-arrow] [class*="disconnect"] [class*="contextMenuNub"] {
+    display: none;
+}
+
+/* Server sidebar */
+[data-guild-events-boosts] {
+    [class*="sidebar"] {
+        &
+            li:has(
+                :is(
+                    [data-list-item-id*="channels___skill-trees"],
+                    [data-list-item-id*="channels___upcoming-events"]
+                )
+            ) {
+            &,
+            & ~ [class*="sectionDivider"] {
+                display: none !important;
+            }
+        }
+        &
+            ul:has(
+                :is(
+                    [data-list-item-id*="channels___skill-trees"],
+                    [data-list-item-id*="channels___upcoming-events"]
+                )
+            )
+            > div[style*="height: 12px;"] {
+            display: none;
+        }
+    }
+}
+
+/* DM sidebar buttons */
+[data-dm-nitro-shop-quests]
+    [class*="sidebarList"]
+    :is(a[href*="/store"], a[href*="/shop"], a[href*="/quest"]) {
+    display: none !important;
+}
+
+/* Message hover reactions */
+[id*="chat-messages"] [class*="buttonContainer"] [class*="buttons"] {
+    display: none;
+}
+
+/* Wide watch stream at call*/
+[data-watch-stream-btn]
+    [class*="callContainer"]
+    [class*="streamPreview"]
+    [class*="cta"] {
+    margin: 0;
+
+    &:not([class*="addCta"]),
+    svg {
+        display: none;
+    }
+
+    & > button {
+        width: 150px;
+
+        &::before {
+            position: absolute;
+            content: "Watch stream";
+            text-wrap: nowrap;
+            font-weight: 500;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+    }
+}
+
+[data-watch-stream-btn]
+    html:has([class*="callContainer"] [class*="streamPreview"] [class*="cta"])
+    #popover-portal {
+    display: none;
+}
+
+/* Mute and deafen side arrows near user */
+[data-user-mute-deafen-arrows]
+    section[class*="panels"]
+    [class*="audioButtonParent"] {
+    & button[role="switch"] {
+        border-radius: 8px;
+    }
+    & button:not([role="switch"]) {
+        display: none;
+    }
+}
